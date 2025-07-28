@@ -8,33 +8,33 @@ All colors MUST be HSL.
 
 @layer base {
   :root {
-    /* Light, airy background */
-    --background: 210 30% 98%;
-    --foreground: 220 20% 15%;
+    /* Modern contrasting background */
+    --background: 220 15% 95%;
+    --foreground: 220 25% 8%;
 
     --card: 0 0% 100%;
-    --card-foreground: 220 20% 15%;
+    --card-foreground: 220 25% 8%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 220 20% 15%;
+    --popover-foreground: 220 25% 8%;
 
-    /* Soft blue primary */
-    --primary: 210 70% 55%;
+    /* Vibrant blue primary */
+    --primary: 210 100% 50%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 210 60% 85%;
-    --primary-lighter: 210 40% 95%;
+    --primary-light: 210 80% 70%;
+    --primary-lighter: 210 50% 90%;
 
-    /* Light gray secondary */
-    --secondary: 210 20% 96%;
-    --secondary-foreground: 220 25% 25%;
+    /* Contrasting secondary */
+    --secondary: 220 25% 8%;
+    --secondary-foreground: 0 0% 100%;
 
-    /* Muted tones */
-    --muted: 210 15% 95%;
-    --muted-foreground: 220 15% 50%;
+    /* Enhanced muted tones */
+    --muted: 220 10% 90%;
+    --muted-foreground: 220 20% 40%;
 
-    /* Soft accent */
-    --accent: 195 75% 88%;
-    --accent-foreground: 220 25% 25%;
+    /* Vibrant accent */
+    --accent: 45 100% 70%;
+    --accent-foreground: 220 25% 8%;
 
     --destructive: 0 70% 65%;
     --destructive-foreground: 0 0% 100%;
@@ -65,27 +65,27 @@ All colors MUST be HSL.
 
   .dark {
     --background: 220 25% 8%;
-    --foreground: 210 30% 95%;
+    --foreground: 220 15% 95%;
 
     --card: 220 25% 10%;
-    --card-foreground: 210 30% 95%;
+    --card-foreground: 220 15% 95%;
 
     --popover: 220 25% 10%;
-    --popover-foreground: 210 30% 95%;
+    --popover-foreground: 220 15% 95%;
 
-    --primary: 210 70% 55%;
+    --primary: 210 100% 60%;
     --primary-foreground: 0 0% 100%;
-    --primary-light: 210 60% 25%;
-    --primary-lighter: 210 40% 15%;
+    --primary-light: 210 60% 40%;
+    --primary-lighter: 210 40% 20%;
 
-    --secondary: 220 20% 15%;
-    --secondary-foreground: 210 30% 90%;
+    --secondary: 220 15% 95%;
+    --secondary-foreground: 220 25% 8%;
 
     --muted: 220 15% 15%;
-    --muted-foreground: 210 15% 65%;
+    --muted-foreground: 220 15% 65%;
 
-    --accent: 195 50% 30%;
-    --accent-foreground: 210 30% 95%;
+    --accent: 45 100% 60%;
+    --accent-foreground: 220 25% 8%;
 
     --destructive: 0 65% 50%;
     --destructive-foreground: 0 0% 100%;
@@ -115,7 +115,7 @@ All colors MUST be HSL.
 
   /* Custom gradients and effects */
   .gradient-primary {
-    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--primary-light)) 100%);
+    background: linear-gradient(135deg, hsl(var(--primary)) 0%, hsl(var(--accent)) 100%);
   }
 
   .gradient-hero {
@@ -127,6 +127,23 @@ All colors MUST be HSL.
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+
+  /* Glassmorphism effect */
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+  }
+
+  /* Truck image hover effects */
+  .truck-hover {
+    transition: all 0.3s ease;
+  }
+
+  .truck-hover:hover {
+    transform: translateY(-8px) scale(1.05);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   }
 
   /* Smooth animations */

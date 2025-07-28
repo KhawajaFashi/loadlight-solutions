@@ -11,6 +11,14 @@ import {
   Shield
 } from "lucide-react";
 
+// Import truck images
+import truckCargo from "@/assets/truck-cargo.jpg";
+import truckDelivery from "@/assets/truck-delivery.jpg";
+import truckSemi from "@/assets/truck-semi.jpg";
+import truckLorry from "@/assets/truck-lorry.jpg";
+import truckFlatbed from "@/assets/truck-flatbed.jpg";
+import truckBox from "@/assets/truck-box.jpg";
+
 const FeaturesSection = () => {
   const features = [
     {
@@ -64,6 +72,15 @@ const FeaturesSection = () => {
     }
   ];
 
+  const truckImages = [
+    { src: truckCargo, alt: "Cargo Truck" },
+    { src: truckDelivery, alt: "Delivery Truck" },
+    { src: truckSemi, alt: "Semi Truck" },
+    { src: truckLorry, alt: "Lorry Truck" },
+    { src: truckFlatbed, alt: "Flatbed Truck" },
+    { src: truckBox, alt: "Box Truck" }
+  ];
+
   return (
     <section id="features" className="py-16 lg:py-24 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -77,23 +94,78 @@ const FeaturesSection = () => {
           </p>
         </div>
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
-          {features.map((feature, index) => (
-            <Card 
-              key={index} 
-              className={`relative bg-card border-border hover:shadow-lg transition-all duration-300 group animate-slide-up ${
-                feature.popular ? 'ring-2 ring-primary/20' : ''
-              }`}
-              style={{ animationDelay: `${index * 0.1}s` }}
-            >
-              {feature.popular && (
-                <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                  <Badge className="bg-primary text-primary-foreground">
-                    Most Popular
-                  </Badge>
+        {/* Main Features Layout */}
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
+          {/* Left: Feature descriptions */}
+          <div className="space-y-6">
+            {features.slice(0, 4).map((feature, index) => (
+              <Card 
+                key={index} 
+                className={`relative bg-card border-border hover:shadow-lg transition-all duration-300 group animate-slide-up ${
+                  feature.popular ? 'ring-2 ring-primary/20' : ''
+                }`}
+                style={{ animationDelay: `${index * 0.1}s` }}
+              >
+                {feature.popular && (
+                  <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
+                    <Badge className="bg-primary text-primary-foreground">
+                      Most Popular
+                    </Badge>
+                  </div>
+                )}
+                
+                <CardContent className="p-6">
+                  {/* Header */}
+                  <div className="flex items-start justify-between mb-4">
+                    <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center group-hover:bg-primary/20 transition-colors">
+                      <feature.icon className="w-6 h-6 text-primary" />
+                    </div>
+                    <Badge variant="secondary" className="text-xs">
+                      {feature.badge}
+                    </Badge>
+                  </div>
+
+                  {/* Content */}
+                  <h3 className="text-lg font-semibold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {feature.title}
+                  </h3>
+                  <p className="text-muted-foreground text-sm leading-relaxed">
+                    {feature.description}
+                  </p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+
+          {/* Right: Truck images grid */}
+          <div className="grid grid-cols-2 gap-6">
+            {truckImages.map((truck, index) => (
+              <div
+                key={index}
+                className="truck-hover rounded-xl overflow-hidden bg-white shadow-lg"
+                style={{ animationDelay: `${(index + 4) * 0.1}s` }}
+              >
+                <img
+                  src={truck.src}
+                  alt={truck.alt}
+                  className="w-full h-48 object-cover"
+                />
+                <div className="p-4 text-center">
+                  <h4 className="font-semibold text-foreground">{truck.alt}</h4>
                 </div>
-              )}
-              
+              </div>
+            ))}
+          </div>
+        </div>
+
+        {/* Additional Features Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+          {features.slice(4).map((feature, index) => (
+            <Card 
+              key={index + 4} 
+              className="bg-card border-border hover:shadow-lg transition-all duration-300 group animate-slide-up"
+              style={{ animationDelay: `${(index + 8) * 0.1}s` }}
+            >
               <CardContent className="p-6">
                 {/* Header */}
                 <div className="flex items-start justify-between mb-4">
@@ -118,8 +190,8 @@ const FeaturesSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center mt-16 animate-fade-in">
-          <div className="bg-secondary/50 rounded-2xl p-8 lg:p-12">
+        <div className="text-center animate-fade-in">
+          <div className="bg-secondary/10 rounded-2xl p-8 lg:p-12 border border-border">
             <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
               Ready to Transform Your Dispatching?
             </h3>
@@ -128,7 +200,7 @@ const FeaturesSection = () => {
               to streamline their operations and increase profitability.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 bg-primary text-primary-foreground rounded-lg font-semibold hover:bg-primary/90 transition-colors">
+              <button className="px-8 py-3 gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-opacity">
                 Start Free Trial
               </button>
               <button className="px-8 py-3 border border-border text-foreground rounded-lg font-semibold hover:bg-secondary transition-colors">

@@ -1,184 +1,189 @@
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
-import { Input } from "@/components/ui/input";
-import { Textarea } from "@/components/ui/textarea";
-import { Label } from "@/components/ui/label";
-import { Phone, Mail, MapPin, Clock } from "lucide-react";
+import { Mail, Phone, MapPin, Clock, MessageSquare, Users } from "lucide-react";
 
 const ContactSection = () => {
   return (
-    <section id="contact" className="py-16 lg:py-24 bg-background">
+    <section id="contact" className="py-16 lg:py-24 bg-secondary/5">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
             Start Dispatching <span className="text-gradient">Smarter</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Ready to transform your trucking operations? Get in touch with our team 
-            and discover how Dispatchers can help you grow your business.
+            Ready to streamline your operations? Get in touch with our dispatch experts 
+            and discover how we can transform your trucking business.
           </p>
         </div>
 
-        <div className="grid lg:grid-cols-2 gap-12">
-          {/* Contact Form */}
-          <Card className="animate-slide-up">
-            <CardContent className="p-8">
-              <h3 className="text-2xl font-bold text-foreground mb-6">
-                Get Started Today
-              </h3>
-              <form className="space-y-6">
-                <div className="grid grid-cols-2 gap-4">
-                  <div>
-                    <Label htmlFor="firstName" className="text-sm font-medium text-foreground">
-                      First Name
-                    </Label>
-                    <Input 
-                      id="firstName" 
-                      placeholder="John" 
-                      className="mt-1"
-                    />
-                  </div>
-                  <div>
-                    <Label htmlFor="lastName" className="text-sm font-medium text-foreground">
-                      Last Name
-                    </Label>
-                    <Input 
-                      id="lastName" 
-                      placeholder="Doe" 
-                      className="mt-1"
-                    />
-                  </div>
-                </div>
-                
-                <div>
-                  <Label htmlFor="email" className="text-sm font-medium text-foreground">
-                    Email Address
-                  </Label>
-                  <Input 
-                    id="email" 
-                    type="email" 
-                    placeholder="john@example.com" 
-                    className="mt-1"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="company" className="text-sm font-medium text-foreground">
-                    Company Name
-                  </Label>
-                  <Input 
-                    id="company" 
-                    placeholder="Your Trucking Company" 
-                    className="mt-1"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="phone" className="text-sm font-medium text-foreground">
-                    Phone Number
-                  </Label>
-                  <Input 
-                    id="phone" 
-                    type="tel" 
-                    placeholder="(555) 123-4567" 
-                    className="mt-1"
-                  />
-                </div>
-                
-                <div>
-                  <Label htmlFor="message" className="text-sm font-medium text-foreground">
-                    Message
-                  </Label>
-                  <Textarea 
-                    id="message" 
-                    placeholder="Tell us about your dispatching needs..." 
-                    rows={4}
-                    className="mt-1"
-                  />
-                </div>
-                
-                <Button className="w-full gradient-primary text-white py-3">
-                  Request Demo
-                </Button>
-              </form>
-            </CardContent>
-          </Card>
-
+        <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
           {/* Contact Information */}
-          <div className="animate-slide-up" style={{ animationDelay: '0.2s' }}>
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-bold text-foreground mb-6">
-                  Get in Touch
-                </h3>
-                <p className="text-muted-foreground mb-8 leading-relaxed">
-                  Our team is here to help you succeed. Whether you have questions 
-                  about our platform or need assistance getting started, we're just a call away.
-                </p>
-              </div>
+          <div className="space-y-8 animate-slide-up">
+            <div>
+              <h3 className="text-2xl font-bold text-foreground mb-6">Get in Touch</h3>
+              <p className="text-muted-foreground mb-8">
+                Our team of dispatch professionals is available 24/7 to support your operations. 
+                Whether you need immediate assistance or want to learn more about our services, 
+                we're here to help.
+              </p>
+            </div>
 
-              <div className="space-y-6">
-                <Card className="border-border hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Phone className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground">Phone</h4>
-                        <p className="text-muted-foreground">(555) 123-DISPATCH</p>
-                        <p className="text-sm text-muted-foreground">Available 24/7</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+            <div className="grid sm:grid-cols-2 gap-6">
+              <Card className="bg-card border-border hover:shadow-lg transition-all duration-300 group">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <Phone className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-2">Call Us</h4>
+                  <p className="text-muted-foreground text-sm mb-2">24/7 Support Line</p>
+                  <p className="text-primary font-semibold">+1 (555) 123-4567</p>
+                </CardContent>
+              </Card>
 
-                <Card className="border-border hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Mail className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground">Email</h4>
-                        <p className="text-muted-foreground">contact@dispatchers.com</p>
-                        <p className="text-sm text-muted-foreground">We'll respond within 2 hours</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+              <Card className="bg-card border-border hover:shadow-lg transition-all duration-300 group">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <Mail className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-2">Email Us</h4>
+                  <p className="text-muted-foreground text-sm mb-2">Quick Response</p>
+                  <p className="text-primary font-semibold">support@dispatchers.com</p>
+                </CardContent>
+              </Card>
 
-                <Card className="border-border hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <MapPin className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground">Office</h4>
-                        <p className="text-muted-foreground">123 Logistics Drive</p>
-                        <p className="text-muted-foreground">Atlanta, GA 30309</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+              <Card className="bg-card border-border hover:shadow-lg transition-all duration-300 group">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <MapPin className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-2">Visit Us</h4>
+                  <p className="text-muted-foreground text-sm mb-2">Main Office</p>
+                  <p className="text-primary font-semibold">123 Logistics Ave, Miami, FL</p>
+                </CardContent>
+              </Card>
 
-                <Card className="border-border hover:shadow-md transition-shadow">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-4">
-                      <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center">
-                        <Clock className="w-6 h-6 text-primary" />
-                      </div>
-                      <div>
-                        <h4 className="font-semibold text-foreground">Support Hours</h4>
-                        <p className="text-muted-foreground">24/7 Emergency Support</p>
-                        <p className="text-sm text-muted-foreground">Always here when you need us</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
+              <Card className="bg-card border-border hover:shadow-lg transition-all duration-300 group">
+                <CardContent className="p-6">
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mb-4 group-hover:bg-primary/20 transition-colors">
+                    <Clock className="w-6 h-6 text-primary" />
+                  </div>
+                  <h4 className="font-semibold text-foreground mb-2">Hours</h4>
+                  <p className="text-muted-foreground text-sm mb-2">Always Available</p>
+                  <p className="text-primary font-semibold">24/7 Operations</p>
+                </CardContent>
+              </Card>
+            </div>
+
+            {/* Quick Stats */}
+            <div className="bg-primary/5 rounded-xl p-6 border border-primary/10">
+              <div className="grid grid-cols-2 gap-6 text-center">
+                <div>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <Users className="w-6 h-6 text-primary" />
+                  </div>
+                  <p className="text-2xl font-bold text-foreground">500+</p>
+                  <p className="text-sm text-muted-foreground">Active Drivers</p>
+                </div>
+                <div>
+                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
+                    <MessageSquare className="w-6 h-6 text-primary" />
+                  </div>
+                  <p className="text-2xl font-bold text-foreground">&lt;2min</p>
+                  <p className="text-sm text-muted-foreground">Response Time</p>
+                </div>
               </div>
             </div>
+          </div>
+
+          {/* CTA Form */}
+          <div className="animate-slide-up" style={{ animationDelay: "0.2s" }}>
+            <Card className="bg-gradient-to-br from-primary/5 to-accent/5 border-primary/20 shadow-xl">
+              <CardContent className="p-8">
+                <div className="text-center mb-8">
+                  <h3 className="text-2xl font-bold text-foreground mb-4">
+                    Start Your Free Trial
+                  </h3>
+                  <p className="text-muted-foreground">
+                    Experience our platform risk-free for 14 days. No credit card required.
+                  </p>
+                </div>
+
+                <form className="space-y-6">
+                  <div className="grid sm:grid-cols-2 gap-4">
+                    <div>
+                      <label htmlFor="firstName" className="block text-sm font-medium text-foreground mb-2">
+                        First Name
+                      </label>
+                      <input
+                        type="text"
+                        id="firstName"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                        placeholder="John"
+                      />
+                    </div>
+                    <div>
+                      <label htmlFor="lastName" className="block text-sm font-medium text-foreground mb-2">
+                        Last Name
+                      </label>
+                      <input
+                        type="text"
+                        id="lastName"
+                        className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                        placeholder="Doe"
+                      />
+                    </div>
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-medium text-foreground mb-2">
+                      Business Email
+                    </label>
+                    <input
+                      type="email"
+                      id="email"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      placeholder="john@company.com"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="company" className="block text-sm font-medium text-foreground mb-2">
+                      Company Name
+                    </label>
+                    <input
+                      type="text"
+                      id="company"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground placeholder-muted-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                      placeholder="Your Trucking Company"
+                    />
+                  </div>
+                  
+                  <div>
+                    <label htmlFor="fleetSize" className="block text-sm font-medium text-foreground mb-2">
+                      Fleet Size
+                    </label>
+                    <select
+                      id="fleetSize"
+                      className="w-full px-4 py-3 rounded-lg border border-border bg-background text-foreground focus:ring-2 focus:ring-primary focus:border-transparent transition-colors"
+                    >
+                      <option value="">Select fleet size</option>
+                      <option value="1-5">1-5 trucks</option>
+                      <option value="6-20">6-20 trucks</option>
+                      <option value="21-50">21-50 trucks</option>
+                      <option value="50+">50+ trucks</option>
+                    </select>
+                  </div>
+
+                  <Button size="lg" className="w-full gradient-primary text-white py-4 text-lg font-semibold">
+                    Start Free Trial
+                  </Button>
+                  
+                  <p className="text-center text-sm text-muted-foreground">
+                    By starting your trial, you agree to our Terms of Service and Privacy Policy
+                  </p>
+                </form>
+              </CardContent>
+            </Card>
           </div>
         </div>
       </div>
