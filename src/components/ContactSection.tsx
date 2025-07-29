@@ -75,24 +75,7 @@ const ContactSection = () => {
             </div>
 
             {/* Quick Stats */}
-            <div className="bg-primary/5 rounded-xl p-6 border border-primary/10">
-              <div className="grid grid-cols-2 gap-6 text-center">
-                <div>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <Users className="w-6 h-6 text-primary" />
-                  </div>
-                  <p className="text-2xl font-bold text-foreground">500+</p>
-                  <p className="text-sm text-muted-foreground">Active Drivers</p>
-                </div>
-                <div>
-                  <div className="w-12 h-12 bg-primary/10 rounded-lg flex items-center justify-center mx-auto mb-3">
-                    <MessageSquare className="w-6 h-6 text-primary" />
-                  </div>
-                  <p className="text-2xl font-bold text-foreground">&lt;2min</p>
-                  <p className="text-sm text-muted-foreground">Response Time</p>
-                </div>
-              </div>
-            </div>
+            
           </div>
 
           {/* CTA Form */}

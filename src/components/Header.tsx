@@ -19,14 +19,12 @@ const Header = () => {
     <header 
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'glass-effect mx-4 mt-4 rounded-full' 
+          ? 'glass-effect mx-4 mt-4 lg:rounded-full rounded-3xl' 
           : 'bg-background/95 backdrop-blur-sm border-b border-border'
       }`}
     >
-      <div className={`mx-auto px-4 sm:px-6 lg:px-8 transition-all duration-300 ${
-        isScrolled ? 'max-w-4xl' : 'container'
-      }`}>
-        <div className="flex items-center justify-between h-16">
+      <div className="sm:px-6 transition-all duration-300">
+        <div className="flex items-center justify-between h-16 px-6">
           {/* Logo */}
           <div className="flex items-center space-x-2">
             <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
@@ -53,9 +51,6 @@ const Header = () => {
 
           {/* Desktop CTA */}
           <div className="hidden md:flex items-center space-x-4">
-            <Button variant="ghost" className="text-muted-foreground hover:text-foreground">
-              Login
-            </Button>
             <Button className="gradient-primary text-white">
               Get Started
             </Button>
@@ -80,36 +75,33 @@ const Header = () => {
             <nav className="flex flex-col space-y-4">
               <a 
                 href="#about" 
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors pl-4"
                 onClick={() => setIsMenuOpen(false)}
               >
                 About
               </a>
               <a 
                 href="#how-it-works" 
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors pl-4"
                 onClick={() => setIsMenuOpen(false)}
               >
                 How It Works
               </a>
               <a 
                 href="#features" 
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors pl-4"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Features
               </a>
               <a 
                 href="#contact" 
-                className="text-muted-foreground hover:text-foreground transition-colors"
+                className="text-muted-foreground hover:text-foreground transition-colors pl-4"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Contact
               </a>
-              <div className="pt-4 space-y-2">
-                <Button variant="ghost" className="w-full justify-start">
-                  Login
-                </Button>
+              <div className="pt-4 space-y-2 px-4">
                 <Button className="w-full gradient-primary text-white">
                   Get Started
                 </Button>

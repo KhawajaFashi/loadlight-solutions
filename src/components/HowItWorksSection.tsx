@@ -30,8 +30,8 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section id="how-it-works" className="py-16 lg:py-24 bg-secondary/30">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="py-16 lg:py-24 bg-secondary/30">
+      <div className="mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
             How <span className="text-gradient">It Works</span>
@@ -46,7 +46,7 @@ const HowItWorksSection = () => {
           {steps.map((step, index) => (
             <Card 
               key={index} 
-              className="relative bg-card border-border hover:shadow-lg transition-all duration-300 animate-slide-up"
+              className="relative bg-card hover:shadow-lg transition-all duration-300 animate-slide-up"
               style={{ animationDelay: `${index * 0.1}s` }}
             >
               <CardContent className="p-6 text-center">
@@ -75,11 +75,7 @@ const HowItWorksSection = () => {
         </div>
 
         {/* Connection lines for desktop */}
-        <div className="hidden lg:block relative -mt-32 pointer-events-none">
-          <div className="absolute top-16 left-1/4 w-1/4 h-0.5 bg-primary/20"></div>
-          <div className="absolute top-16 left-2/4 w-1/4 h-0.5 bg-primary/20"></div>
-          <div className="absolute top-16 left-3/4 w-1/4 h-0.5 bg-primary/20"></div>
-        </div>
+        
       </div>
     </section>
   );

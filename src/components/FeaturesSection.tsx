@@ -82,7 +82,7 @@ const FeaturesSection = () => {
   ];
 
   return (
-    <section id="features" className="py-16 lg:py-24 bg-background">
+    <section id="features" className="py-8 lg:py-16 bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16 animate-fade-in">
           <h2 className="text-3xl lg:text-4xl font-bold text-foreground mb-6">
@@ -95,7 +95,7 @@ const FeaturesSection = () => {
         </div>
 
         {/* Main Features Layout */}
-        <div className="grid lg:grid-cols-2 gap-16 items-start mb-24">
+        <div className="grid lg:grid-cols-2 gap-16 items-start mb-12">
           {/* Left: Feature descriptions */}
           <div className="space-y-6">
             {features.slice(0, 4).map((feature, index) => (
@@ -138,7 +138,7 @@ const FeaturesSection = () => {
           </div>
 
           {/* Right: Truck images grid */}
-          <div className="grid grid-cols-2 gap-6">
+          <div className="grid grid-cols-2 gap-4">
             {truckImages.map((truck, index) => (
               <div
                 key={index}
@@ -148,7 +148,7 @@ const FeaturesSection = () => {
                 <img
                   src={truck.src}
                   alt={truck.alt}
-                  className="w-full h-48 object-cover"
+                  className="w-full h-52 object-contain"
                 />
                 <div className="p-4 text-center">
                   <h4 className="font-semibold text-foreground">{truck.alt}</h4>
@@ -190,25 +190,7 @@ const FeaturesSection = () => {
         </div>
 
         {/* CTA Section */}
-        <div className="text-center animate-fade-in">
-          <div className="bg-secondary/10 rounded-2xl p-8 lg:p-12 border border-border">
-            <h3 className="text-2xl lg:text-3xl font-bold text-foreground mb-4">
-              Ready to Transform Your Dispatching?
-            </h3>
-            <p className="text-lg text-muted-foreground mb-6 max-w-2xl mx-auto">
-              Join hundreds of successful trucking companies already using Dispatchers 
-              to streamline their operations and increase profitability.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button className="px-8 py-3 gradient-primary text-white rounded-lg font-semibold hover:opacity-90 transition-opacity">
-                Start Free Trial
-              </button>
-              <button className="px-8 py-3 border border-border text-foreground rounded-lg font-semibold hover:bg-secondary transition-colors">
-                Schedule Demo
-              </button>
-            </div>
-          </div>
-        </div>
+        
       </div>
     </section>
   );
